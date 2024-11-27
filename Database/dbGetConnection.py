@@ -2,10 +2,10 @@ import mysql.connector
 
 def getConnection():
     config = {
-        'user': 'root',
-        'password': '',
-        'host': 'localhost',
-        'database': 'db_test',
+        'user': 'facundo',
+        'password': 'Iweb.2024!',
+        'host': '190.49.91.171',
+        'database': 'u830440565_mainDB_serena',
         'raise_on_warnings': True
     }
 
@@ -18,11 +18,12 @@ def getConnection():
 
 def getConnectionForLogin():
     config = {
-        'user': 'root',
-        'password': '',
-        'host': 'localhost',
-        'database': 'db_credentials',
-        'raise_on_warnings': True
+        'user': 'facundo',
+        'password': 'Iweb.2024!',
+        'host': '190.49.91.171',
+        'database': 'u830440565_mainDB_serena',
+        'raise_on_warnings': True,
+        'table': 'credentials'
     }
 
     try:
