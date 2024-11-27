@@ -4,3 +4,5 @@ pydantic
 mysql-connector-python
 mysql
 python-dotenv
+jinja2
+python-multipart
