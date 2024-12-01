@@ -6,7 +6,8 @@ def getConnection():
         'password': 'Iweb.2024!',
         'host': '190.49.91.171',
         'database': 'u830440565_mainDB_serena',
-        'raise_on_warnings': True
+        'raise_on_warnings': True,
+        'port': '8000'
     }
 
     try:
@@ -23,7 +24,8 @@ def getConnectionForLogin():
         'host': '190.49.91.171',
         'database': 'u830440565_mainDB_serena',
         'raise_on_warnings': True,
-        'table': 'credentials'
+        'table': 'credentials',
+        'port': '8000'
     }
 
     try:
