@@ -4,7 +4,7 @@ def getConnection():
     config = {
         'user': 'u830440565_facundo',
         'password': 'Iweb.2024!',
-        'host': '127.0.0.1:3306',
+        'host': '190.49.91.171',
         'database': 'u830440565_mainDB_serena',
         'raise_on_warnings': True
     }
