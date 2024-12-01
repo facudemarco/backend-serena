@@ -18,7 +18,7 @@ def getConnection():
 
 def getConnectionForLogin():
     config = {
-        'user': 'facundo',
+        'user': 'u830440565_facundo',
         'password': 'Iweb.2024!',
         'host': '190.49.91.171',
         'database': 'u830440565_mainDB_serena',
