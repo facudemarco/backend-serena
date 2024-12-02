@@ -23,7 +23,7 @@ def getProducts():
 
     cursor = connection.cursor(dictionary=True)
 
-    cursor.execute("SELECT * FROM products")
+    cursor.execute("SELECT * FROM `Products`")
 
     products = cursor.fetchall()
     cursor.close()
