@@ -8,7 +8,7 @@ router = APIRouter()
 def authenticate_user(username: str, password: str):
     connection = getConnectionForLogin()
     cursor = connection.cursor(dictionary=True)
-    cursor.execute("SELECT * FROM credentials WHERE username = %s AND password = %s", (username, password))
+    cursor.execute("SELECT * FROM `credentials` WHERE username = %s AND password = %s", (username, password))
     user = cursor.fetchone()
     cursor.close()
     connection.close()

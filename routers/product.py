@@ -43,7 +43,7 @@ def getProduct(id: int):
 
     cursor = connection.cursor(dictionary=True)
 
-    cursor.execute("SELECT * FROM products WHERE id = %s", (id,))
+    cursor.execute("SELECT * FROM `Products` WHERE id = %s", (id,))
 
     product = cursor.fetchone()
     cursor.close()
@@ -65,7 +65,7 @@ def createProduct(product: Product):
         raise HTTPException(status_code=500, detail="Connection to the database failed.")
     cursor = connection.cursor()
 
-    cursor.execute("INSERT INTO products (destino, subtitulo, descripcion, fecha-de-salida, dias, noches, regimen, transporte, periodo, tipo-de-paquete, moneda, precio, precio-adicional, hotel, image_url) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
+    cursor.execute("INSERT INTO `Products` (destino, subtitulo, descripcion, fecha-de-salida, dias, noches, regimen, transporte, periodo, tipo-de-paquete, moneda, precio, precio-adicional, hotel, image_url) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
                    (product.destino, product.subtitulo, product.descripcion, product.fecha_de_salida, product.dias, product.noches, product.regimen, product.transporte, product.periodo, product.tipo_de_paquete, product.moneda, product.precio, product.precio_adicional, product.hotel, product.image_url))
 
     connection.commit()
@@ -87,7 +87,7 @@ def modProduct(id: int, product: Product):
 
     cursor = connection.cursor()
 
-    cursor.execute("UPDATE products SET destino = %s, subtitulo = %s, descripcion = %s, fecha-de-salida = %s, dias = %s, noches = %s, regimen = %s, transporte = %s, periodo = %s, tipo-de-paquete = %s, moneda = %s, precio = %s, precio-adicional = %s, hotel = %s, image_url = %s WHERE id = %s",
+    cursor.execute("UPDATE `Products` SET destino = %s, subtitulo = %s, descripcion = %s, fecha-de-salida = %s, dias = %s, noches = %s, regimen = %s, transporte = %s, periodo = %s, tipo-de-paquete = %s, moneda = %s, precio = %s, precio-adicional = %s, hotel = %s, image_url = %s WHERE id = %s",
                    (product.destino, product.subtitulo, product.descripcion, product.fecha_de_salida, product.dias, product.noches, product.regimen, product.transporte, product.periodo, product.tipo_de_paquete, product.moneda, product.precio, product.precio_adicional, product.hotel, product.image_url, id))
 
     connection.commit()
@@ -109,7 +109,7 @@ def delProducts(id: int):
 
     cursor = connection.cursor()
 
-    cursor.execute("DELETE FROM products WHERE id = %s", (id,))
+    cursor.execute("DELETE FROM `Products` WHERE id = %s", (id,))
 
     connection.commit()
 
