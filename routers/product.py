@@ -1,8 +1,15 @@
 from fastapi import APIRouter, HTTPException
 from models.product import Product
 from Database.dbGetConnection import getConnection
+from Database.testConnection import get_connection
 
 router = APIRouter()
+
+@router.get('/teste-database')
+
+def testeDatabase():
+    connection = get_connection()
+    return {"message": "Database connection successful"}
 
 # Get all products
 
