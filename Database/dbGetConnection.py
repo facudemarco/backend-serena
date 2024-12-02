@@ -4,10 +4,10 @@ def getConnection():
     config = {
         'user': 'u830440565_facundo',
         'password': 'Iweb.2024!',
-        'host': '190.49.91.171',
+        'host': '193.203.175.121',
         'database': 'u830440565_mainDB_serena',
         'raise_on_warnings': True,
-        'port': '8000'
+        'port': '3306'
     }
 
     try:
@@ -21,11 +21,11 @@ def getConnectionForLogin():
     config = {
         'user': 'u830440565_facundo',
         'password': 'Iweb.2024!',
-        'host': '190.49.91.171',
+        'host': '193.203.175.121',
         'database': 'u830440565_mainDB_serena',
         'raise_on_warnings': True,
         'table': 'credentials',
-        'port': '8000'
+        'port': '3306'
     }
 
     try:
