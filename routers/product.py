@@ -62,7 +62,7 @@ def createProduct(product: Product):
     connection = getConnection()
 
     if connection is None:
-        raise HTTPException(status_code=500, detail="Connection to the database failed.")
+        raise HTTPException(detail="Connection to the database failed.")
     cursor = connection.cursor()
 
     cursor.execute("INSERT INTO `Products` (destino, subtitulo, descripcion, fecha-de-salida, dias, noches, regimen, transporte, periodo, tipo-de-paquete, moneda, precio, precio-adicional, hotel, image_url) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
