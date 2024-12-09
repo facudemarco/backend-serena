@@ -2,7 +2,7 @@ from pydantic import BaseModel
 from typing import Optional
 
 class Product(BaseModel):
-    id: Optional[int] = None
+    id: str
     destino: str
     subtitulo: str
     descripcion: str
@@ -14,7 +14,7 @@ class Product(BaseModel):
     periodo: str
     tipo_de_paquete: str
     moneda: str
-    precio: float
-    precio_adicional: float
+    precio: int
+    precio_adicional: str
     hotel: str
     image_url: str

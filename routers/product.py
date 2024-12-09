@@ -35,7 +35,7 @@ def getProducts():
 
 @router.get('/products/{id}')
 
-def getProduct(id: int):
+def getProduct(id: str):
     connection = getConnection()
 
     if connection is None:
@@ -55,7 +55,7 @@ def getProduct(id: int):
     return product
 
 # Crear producto
-@router.post('/products')
+@router.post('/products/create_product')
 
 def createProduct(product: Product):
 
@@ -65,8 +65,7 @@ def createProduct(product: Product):
         raise HTTPException(detail="Connection to the database failed.")
     cursor = connection.cursor()
 
-    cursor.execute("INSERT INTO `Products` (destino, subtitulo, descripcion, fecha-de-salida, dias, noches, regimen, transporte, periodo, tipo-de-paquete, moneda, precio, precio-adicional, hotel, image_url) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)",
-                   (product.destino, product.subtitulo, product.descripcion, product.fecha_de_salida, product.dias, product.noches, product.regimen, product.transporte, product.periodo, product.tipo_de_paquete, product.moneda, product.precio, product.precio_adicional, product.hotel, product.image_url))
+    cursor.execute("INSERT INTO `Products`(`ID`, `destino`, `subtitulo`, `descripcion`, `fecha_de_salida`, `dias`, `noches`, `regimen`, `transporte`, `periodo`, `tipo_de_paquete`, `moneda`, `precio`, `precio_adicional`, `hotel`, `image_url`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)", (product.id, product.destino, product.subtitulo, product.descripcion, product.fecha_de_salida, product.dias, product.noches, product.regimen, product.transporte, product.periodo, product.tipo_de_paquete, product.moneda, product.precio, product.precio_adicional, product.hotel, product.image_url))
 
     connection.commit()
 
@@ -79,7 +78,7 @@ def createProduct(product: Product):
 # Modificar producto
 @router.put('/products/{id}')
 
-def modProduct(id: int, product: Product):
+def modProduct(id: str, product: Product):
     connection = getConnection()
 
     if connection is None:
@@ -101,7 +100,7 @@ def modProduct(id: int, product: Product):
 # Eliminar producto
 @router.delete('/products/{id}')
 
-def delProducts(id: int):
+def delProducts(id: str):
     connection = getConnection()
 
     if connection is None:
