@@ -1,12 +1,13 @@
 from pydantic import BaseModel
 from typing import Optional
+from datetime import date
 
 class Product(BaseModel):
-    id: str
+    id: Optional[str] = None
     destino: str
     subtitulo: str
     descripcion: str
-    fecha_de_salida: str
+    fecha_de_salida: date
     dias: int
     noches: int
     regimen: str
