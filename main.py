@@ -12,6 +12,7 @@ origins = [
     "https://serenaviajes.com",
     "https://serena-website.vercel.app/",
     "htpps://hostinger.com"
+    "https://serena-website.vercel.app/nacionales"
 ]
 
 app.add_middleware(
