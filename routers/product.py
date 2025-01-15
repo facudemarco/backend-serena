@@ -68,7 +68,7 @@ def createProduct(product: Product):
         raise HTTPException(detail="Connection to the database failed.")
     cursor = connection.cursor()
 
-    cursor.execute("INSERT INTO `Products`(`ID`, `destino`, `subtitulo`, `date`, `days`, `nights`, `regimen`, `transporte`, `periodo`, `paquete`, `descripcion`, `moneda`, `precio`, `adicional`, `img`, `desde`, `desde`, `hotel`, `incluye`, `observaciones`, `itinerario`, `tarifas`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)", (generated_id, product.destino, product.subtitulo, product.date, product.days, product.nights, product.regimen, product.transporte, product.periodo, product.paquete, product.descripcion, product.moneda, product.precio, product.adicional, product.img, product.desde, product.desde, product.hotel, product.incluye, product.observaciones, product.itinerario, product.tarifas))
+    cursor.execute("INSERT INTO `Products`(`ID`, `destino`, `subtitulo`, `date`, `days`, `nights`, `regimen`, `transporte`, `periodo`, `paquete`, `descripcion`, `moneda`, `precio`, `adicional`, `img`, `desde`, `hotel`, `incluye`, `observaciones`, `itinerario`, `tarifas`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)", (generated_id, product.destino, product.subtitulo, product.date, product.days, product.nights, product.regimen, product.transporte, product.periodo, product.paquete, product.descripcion, product.moneda, product.precio, product.adicional, product.img, product.desde, product.hotel, product.incluye, product.observaciones, product.itinerario, product.tarifas))
     connection.commit()
 
     cursor.close()
