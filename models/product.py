@@ -2,8 +2,6 @@ from pydantic import BaseModel
 from typing import Optional
 from datetime import date
 
-json = dict
-
 class Product(BaseModel):
     id: Optional[str] = None
     destino: str
@@ -20,9 +18,9 @@ class Product(BaseModel):
     precio: int
     adicional: str
     img: str
-    desde: int
+    desde: bool
     hotel: str
-    incluye: json
-    observaciones: json
-    itinerario: json
-    tarifas: json
+    incluye: str
+    observaciones: str
+    itinerario: str
+    tarifas: str
