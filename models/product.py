@@ -7,15 +7,15 @@ class Product(BaseModel):
     destino: str
     subtitulo: str
     date: date
-    days: int
-    nights: int
+    days: str
+    nights: str
     regimen: str
     transporte: str
     periodo: str
     paquete: str
     descripcion: str
     moneda: str
-    precio: int
+    precio: str
     adicional: str
     img: str
     desde: bool
