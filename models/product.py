@@ -17,7 +17,7 @@ class Product(BaseModel):
     moneda: str
     precio: str
     adicional: str
-    img: str
+    image: str
     desde: bool
     hotel: str
     incluye: str
