@@ -68,7 +68,7 @@ def createProduct(product: Product):
         raise HTTPException(detail="Connection to the database failed.")
     cursor = connection.cursor()
 
-    cursor.execute("INSERT INTO `Products`(`ID`, `destino`, `subtitulo`, `date`, `days`, `nights`, `regimen`, `transporte`, `periodo`, `paquete`, `descripcion`, `moneda`, `precio`, `adicional`, `img`, `desde`, `hotel`, `incluye`, `observaciones`, `itinerario`, `tarifas`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)", (generated_id, product.destino, product.subtitulo, product.date, product.days, product.nights, product.regimen, product.transporte, product.periodo, product.paquete, product.descripcion, product.moneda, product.precio, product.adicional, product.img, product.desde, product.hotel, product.incluye, product.observaciones, product.itinerario, product.tarifas))
+    cursor.execute("INSERT INTO `Products`(`ID`, `destino`, `subtitulo`, `date`, `days`, `nights`, `regimen`, `transporte`, `periodo`, `paquete`, `descripcion`, `moneda`, `precio`, `adicional`, `image`, `desde`, `hotel`, `incluye`, `observaciones`, `itinerario`, `tarifas`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)", (generated_id, product.destino, product.subtitulo, product.date, product.days, product.nights, product.regimen, product.transporte, product.periodo, product.paquete, product.descripcion, product.moneda, product.precio, product.adicional, product.image, product.desde, product.hotel, product.incluye, product.observaciones, product.itinerario, product.tarifas))
     connection.commit()
 
     cursor.close()
@@ -88,7 +88,7 @@ def modProduct(id: str, product: Product):
 
     cursor = connection.cursor()
 
-    cursor.execute("UPDATE `Products` SET destino = %s, subtitulo = %s, date = %s, days = %s, nights = %s, regimen = %s, transporte = %s, periodo = %s, paquete = %s, descripcion = %s, moneda = %s, precio = %s, adicional = %s, img = %s, desde = %s, hotel = %s, incluye = %s, observaciones = %s, itinerario = %s, tarifas = %s WHERE id = %s", (product.destino, product.subtitulo, product.date, product.days, product.nights, product.regimen, product.transporte, product.periodo, product.paquete, product.descripcion, product.moneda, product.precio, product.adicional, product.img, product.desde, product.hotel, product.incluye, product.observaciones, product.itinerario, product.tarifas, id))
+    cursor.execute("UPDATE `Products` SET destino = %s, subtitulo = %s, date = %s, days = %s, nights = %s, regimen = %s, transporte = %s, periodo = %s, paquete = %s, descripcion = %s, moneda = %s, precio = %s, adicional = %s, image = %s, desde = %s, hotel = %s, incluye = %s, observaciones = %s, itinerario = %s, tarifas = %s WHERE id = %s", (product.destino, product.subtitulo, product.date, product.days, product.nights, product.regimen, product.transporte, product.periodo, product.paquete, product.descripcion, product.moneda, product.precio, product.adicional, product.image, product.desde, product.hotel, product.incluye, product.observaciones, product.itinerario, product.tarifas, id))
     connection.commit()
 
     cursor.close()
