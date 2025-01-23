@@ -4,6 +4,7 @@ from Database.dbGetConnection import getConnection
 from Database.testConnection import get_connection
 import uuid
 
+
 router = APIRouter()
 
 @router.get('/teste-database')
@@ -65,7 +66,7 @@ def createProduct(product: Product):
     generated_id = str(uuid.uuid4())
 
     if connection is None:
-        raise HTTPException(detail="Connection to the database failed.")
+        raise HTTPException(status_code=500, detail="Connection to the database failed.")
     cursor = connection.cursor()
 
     cursor.execute("INSERT INTO `Products`(`ID`, `destino`, `subtitulo`, `date`, `days`, `nights`, `regimen`, `transporte`, `periodo`, `paquete`, `descripcion`, `moneda`, `precio`, `adicional`, `image`, `desde`, `hotel`, `incluye`, `observaciones`, `itinerario`, `tarifas`) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)", (generated_id, product.destino, product.subtitulo, product.date, product.days, product.nights, product.regimen, product.transporte, product.periodo, product.paquete, product.descripcion, product.moneda, product.precio, product.adicional, product.image, product.desde, product.hotel, product.incluye, product.observaciones, product.itinerario, product.tarifas))

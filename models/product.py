@@ -20,7 +20,7 @@ class Product(BaseModel):
     image: str
     desde: bool
     hotel: str
-    incluye: list[str]
-    observaciones: list[str]
-    itinerario: list[str]
-    tarifas: list[str]
+    incluye: str
+    observaciones: str
+    itinerario: str
+    tarifas: str
