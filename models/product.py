@@ -40,4 +40,3 @@ class Product(BaseModel):
     tarifas3: str
     tarifas4: str
     tarifas5: str
-
