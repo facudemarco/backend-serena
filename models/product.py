@@ -23,4 +23,11 @@ class Product(BaseModel):
     incluye: str
     observaciones: str
     itinerario: str
+    itinerario2: str
+    itinerario3: str
+    itinerario4: str
+    itinerario5: str
+    itinerario6: str
+    itinerario7: str
+    itinerario8: str
     tarifas: str
