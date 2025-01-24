@@ -21,7 +21,12 @@ class Product(BaseModel):
     desde: bool
     hotel: str
     incluye: str
+    incluye2: str
+    incluye3: str
+    incluye4: str
     observaciones: str
+    observaciones2: str
+    observaciones3: str
     itinerario: str
     itinerario2: str
     itinerario3: str
@@ -31,3 +36,8 @@ class Product(BaseModel):
     itinerario7: str
     itinerario8: str
     tarifas: str
+    tarifas2: str
+    tarifas3: str
+    tarifas4: str
+    tarifas5: str
+
