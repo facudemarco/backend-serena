@@ -24,7 +24,6 @@ def getConnectionForLogin():
         'host': '193.203.175.121',
         'database': 'u830440565_mainDB_serena',
         'raise_on_warnings': True,
-        'table': 'credentials',
         'port': '3306'
     }
 

@@ -7,6 +7,9 @@ router = APIRouter()
 
 def authenticate_user(username: str, password: str):
     connection = getConnectionForLogin()
+    if not connection:
+        return None
+    
     cursor = connection.cursor(dictionary=True)
     cursor.execute("SELECT * FROM `credentials` WHERE username = %s AND password = %s", (username, password))
     user = cursor.fetchone()
@@ -15,7 +18,7 @@ def authenticate_user(username: str, password: str):
     return user
 
 @router.get('/admin', response_class=JSONResponse, summary="Página de Inicio de Sesión", description="Endpoint que indica que la página de inicio de sesión está disponible.")
-def login(request: Request):
+def login_admin(request: Request):
     """
     Este endpoint indica que la página de inicio de sesión está disponible.
     Se debe renderizar la página de inicio de sesión cuando se acceda a este endpoint.
