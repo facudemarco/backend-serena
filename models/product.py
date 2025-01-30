@@ -7,6 +7,7 @@ class Product(BaseModel):
     destino: str
     subtitulo: str
     date: date
+    date2: date
     days: str
     nights: str
     regimen: str
