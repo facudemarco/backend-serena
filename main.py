@@ -3,6 +3,7 @@ import uvicorn
 from models.product import Product
 from routers.product import router as routerProduct
 from routers.login import router as routerLogin
+from routers.contact import router as routerContact
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
@@ -32,3 +33,4 @@ if __name__ == "__main__":
 app.include_router(routerLogin)
 
 app.include_router(routerProduct)
+app.include_router(routerContact)
