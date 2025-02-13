@@ -1,3 +1,4 @@
+from pydoc import describe
 from pydantic import BaseModel
 from typing import Optional
 from datetime import date
@@ -41,3 +42,13 @@ class Product(BaseModel):
     tarifas3: str
     tarifas4: str
     tarifas5: str
+    
+class Destacados(BaseModel):
+    id: Optional[str] = None
+    image: str
+        
+class Cartelera(BaseModel):
+    id: Optional[str] = None
+    image: str
+    descripcion: str
+    periodo: str
