@@ -25,6 +25,29 @@ def getFeatures():
     connection.close()
     return products
 
+# Filter flyers by id
+
+@router.get('/cartelera/{id}')
+
+def getFlyersById(id: str):
+    connection = getConnection()
+
+    if connection is None:
+        raise HTTPException(status_code=500, detail="Connection to the database failed.")
+
+    cursor = connection.cursor(dictionary=True)
+
+    cursor.execute("SELECT * FROM `cartelera` WHERE id = %s", (id,))
+
+    product = cursor.fetchone()
+    cursor.close()
+
+    connection.close()
+
+    if product is None:
+        raise HTTPException(status_code=404, detail="Product not found.")
+    return product
+
 # Create flyer
 @router.post('/create_flyer')
 
