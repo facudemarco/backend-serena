@@ -74,10 +74,6 @@ def dashboard(request: Request, current_user: dict | None = Depends(get_current_
 def failed_login(request: Request):
     return JSONResponse(content={"message": "Inicio de sesión fallido"}, status_code=401)
 
-@router.get('/', response_class=JSONResponse, summary="Página Principal", description="Endpoint para la página principal.")
-def index(request: Request):
-    return JSONResponse(content={"message": "Bienvenido a la página principal"}, status_code=200)
-
 @router.get('/logout', response_class=JSONResponse, summary="Cerrar Sesión", description="Endpoint para cerrar la sesión del usuario.")
 def logout(response: Response):
     response.delete_cookie("access_token")
