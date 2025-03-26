@@ -59,7 +59,7 @@ def login(response: Response, username: Annotated[str, Form(description="Nombre 
     if user:
         access_token = create_access_token(data={"username": username})
         response.set_cookie(key="access_token", value=access_token, httponly=True, secure=False, samesite="lax", max_age=ACCESS_TOKEN_EXPIRE_DAYS * 24 * 60 * 60)
-        return JSONResponse(content={"message": "Inicio de sesión exitoso", "redirect_url": "/dashboard"}, status_code=200)
+        return JSONResponse(content={"message": "Inicio de sesión exitoso", "Token" : access_token}, status_code=200)
     else:
         return JSONResponse(content={"message": "Inicio de sesión fallido", "redirect_url": "/failed-login"}, status_code=401)
 
