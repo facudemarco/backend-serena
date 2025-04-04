@@ -3,6 +3,10 @@ from pydantic import BaseModel
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 router = APIRouter()
 
@@ -15,7 +19,11 @@ class FormData(BaseModel):
 
 def enviar_email(form_data: FormData):
     sender_email = "fac.demarco37@gmail.com"
-    sender_password = "ifoc prlz usgx mvno"
+    sender_password = os.environ.get("SENDER_PASSWORD")
+    
+    if not sender_password:
+        raise HTTPException(status_code=500, detail="La contraseña del remitente no está configurada")
+        
     receiver_email = "fac.demarco37@gmail.com"
     subject = f"Nuevo mensaje de contacto desde la Web de {form_data.nombre}"
     body = f"Nombre: {form_data.nombre}\nApellido: {form_data.apellido}\nTeléfono: {form_data.telefono}\nEmail: {form_data.email}\nMensaje: {form_data.mensaje}"
